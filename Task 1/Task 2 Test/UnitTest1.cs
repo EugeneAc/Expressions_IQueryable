@@ -35,7 +35,7 @@ namespace Task_2_Test
         public void TestRefMapping()
         {
             MappingGenerator mapGenerator = new MappingGenerator();
-            Bar bar = mapGenerator.Generate<Foo, Bar>().CopyParam(f=>f.FooIntProp, b => b.BarStringProp).Map(new Foo());
+            Bar bar = mapGenerator.Generate<Foo, Bar>().CopyParam(f=>f.FooStringProp, b => b.BarStringProp).Map(new Foo());
             Assert.IsTrue(bar.BarStringProp == "test");
             Console.WriteLine(bar);
             Console.WriteLine(bar.BarStringProp);
