@@ -1,6 +1,4 @@
-﻿
-
-namespace Task_1_Test
+﻿namespace Task_1_Test
 {
     using System;
     using System.Collections.Generic;
@@ -18,10 +16,13 @@ namespace Task_1_Test
         {
             Expression<Func<int, int>> add_exp = (a) => (a + 1);
             var result_addexp = new Transformator().VisitAndConvert(add_exp, string.Empty);
-            var result = result_addexp.Compile().Invoke(3);
-            Console.WriteLine(result_addexp + " = " + result);
-            Assert.IsTrue(result_addexp.Body.ToString().Contains("Increment"));
-            Assert.IsTrue(result == 4);
+            if (result_addexp != null)
+            {
+                var result = result_addexp.Compile().Invoke(3);
+                Console.WriteLine(result_addexp + " = " + result);
+                Assert.IsTrue(result_addexp.Body.ToString().Contains("Increment"));
+                Assert.IsTrue(result == 4);
+            }
         }
 
         [TestMethod]
@@ -42,8 +43,10 @@ namespace Task_1_Test
             var result_transform = new Transformator().ChangeParameter(
                                            add_exp,
                                            new Dictionary<string, int>() { { "a", 1 } });
-           Console.WriteLine(result_transform.ToString());
+            var afterTransformResult = (int)result_transform.Compile().DynamicInvoke(2);
+           Console.WriteLine(result_transform.ToString()+" = " + afterTransformResult);
            Assert.IsTrue(result_transform.ToString().ToCharArray()[6] == Convert.ToChar("1"));
+           Assert.IsTrue(afterTransformResult == 6);
         }
     }
 }

@@ -8,10 +8,10 @@
     {
         private Dictionary<string, int> _changeArgs;
 
-        public Expression ChangeParameter<T>(Expression<T> exp, Dictionary<string, int> changeArgs)
+        public LambdaExpression ChangeParameter<T>(Expression<T> exp, Dictionary<string, int> changeArgs)
         {
             _changeArgs = changeArgs;
-           var test = VisitLambda(exp);
+           var test = (LambdaExpression)VisitLambda(exp);
             return test;
         }
 
