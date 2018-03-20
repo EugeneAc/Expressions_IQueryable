@@ -34,9 +34,7 @@ namespace Sample03.E3SClient
 	{
 		public FTSQueryRequest()
 		{
-			//Statements = new List<Statement>();
-			//Filters = new List<Filter>();
-			//Sorting = new SortingCollection();
+			
 		}
 
 		[JsonProperty("statements")]

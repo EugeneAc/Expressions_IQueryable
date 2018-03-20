@@ -68,12 +68,7 @@ namespace Sample03
 				        Visit(node.Left);
 				        resultString.Append(")");
 				    }
-     //               if (!(node.Left.NodeType == ExpressionType.Constant))
-					//	throw new NotSupportedException(string.Format("Left operand should be property or field", node.NodeType));
-
-					//if (!(node.Right.NodeType == ExpressionType.Constant))
-					//	throw new NotSupportedException(string.Format("Right operand should be constant", node.NodeType));
-				    else
+                    else
 				    {
 				        Visit(node.Left);
 				        resultString.Append("(");
@@ -90,7 +85,7 @@ namespace Sample03
 			            break;
                     }
                 default:
-				    //Visit(node);
+				    
 					throw new NotSupportedException(string.Format("Operation {0} is not supported", node.NodeType));
 			};
 

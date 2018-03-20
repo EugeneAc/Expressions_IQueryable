@@ -35,8 +35,6 @@ namespace Sample03.E3SClient
 			var resultString = client.GetStringAsync(request).Result;
             var result = JsonConvert.DeserializeObject<FTSResponse<T>>(resultString).items.Select(t => t.data);
 
-            
-
             return result;
 		}
 

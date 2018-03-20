@@ -5,7 +5,7 @@ namespace Task_2_Test
 {
     using Task_2;
     [TestClass]
-    public class UnitTest1
+    public class Task2Tests
     {
         public class Foo
         {

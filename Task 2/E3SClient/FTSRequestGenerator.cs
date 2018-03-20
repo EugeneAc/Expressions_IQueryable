@@ -1,5 +1,4 @@
-﻿
-namespace Sample03.E3SClient
+﻿namespace Sample03.E3SClient
 {
     using System;
     using System.Collections.Generic;
